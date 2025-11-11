@@ -1,5 +1,7 @@
 package View;
 
+import Model.Produto;
+
 import java.util.Scanner;
 import java.util.List;
 
@@ -29,5 +31,17 @@ public class View{
         } catch (NumberFormatException e) {
             return -1;
         }
+    }
+
+    public void exibirCarrinho(List<Produto> itens, double total){
+        System.out.println("--- Produtos no seu carrinho ---");
+        if(itens.isEmpty()){
+            System.out.println("O carrinho esta vazio");
+        }else {
+            for (Produto item: itens){
+                System.out.println("- " +  item.toString());
+            }
+        }
+        System.out.printf("Total : R$%.2f\n", total);
     }
 }
