@@ -10,7 +10,9 @@ public class View{
     private Scanner scanner = new Scanner(System.in);
 
     public int ExibeMenu(){
+        System.out.println("=========================");
         System.out.println("--- Bem Vindo à Loja ---");
+        System.out.println("=========================");
         System.out.println("1) Ver produtos disponiveis para compra");
         System.out.println("2) Ver carrinho atual");
         System.out.println("3) Finalizar compra");
