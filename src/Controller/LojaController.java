@@ -1,21 +1,20 @@
 package Controller;
 
 import java.util.List;
-
 import Model.CarrinhoDeCompras;
-import Model.Itnes;
+import Model.Catalogo;
 import Model.Produto;
 import View.View;
 
 public class LojaController {
     private CarrinhoDeCompras carrinho;
     private View view;
-    private Itnes catalogo;
+    private Catalogo catalogo;
 
     public LojaController(View view, CarrinhoDeCompras carrinho) {
         this.view = view;
         this.carrinho = carrinho;
-        this.catalogo = new Itnes();
+        this.catalogo = new Catalogo();
     }
 
     public void iniciar() {
@@ -34,14 +33,14 @@ public class LojaController {
                 case 3:
                     finalizarCompra();
                     break;
-                case 0:
+                case 4:
                     if (confirmarSaida()) {
-                        view.mostrarMensagem("fechando a loja");
+                        view.mostrarMensagem("Fechando a loja. Obrigado!");
                         return;
                     }
                     break;
                 default:
-                    view.mostrarMensagem("Opção inválida");
+                    view.mostrarMensagem("Opção inválida. Por favor, escolha de 1 a 4.");
             }
         }
     }
@@ -57,10 +56,11 @@ public class LojaController {
         
         if (escolha > 0 && escolha <= produtosDisponiveis.size()) {
             Produto p = produtosDisponiveis.get(escolha - 1);
-            carrinho.AdicionaCarrionho(p); 
-            view.mostrarMensagem("'" + p.getNome() + "'adicionado ao carrinho");
-        } else if (escolha != 0) {
-            view.mostrarMensagem("produto inválido");
+            carrinho.AdicionaCarrinho(p);
+            view.mostrarMensagem("'" + p.getNome() + "' adicionado ao carrinho.");
+        } else if (escolha == 0) {
+        } else {
+            view.mostrarMensagem("Produto inválido.");
         }
     }
 

@@ -4,10 +4,10 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-public class Itnes { 
+public class Catalogo { 
     private List<Produto> produtos;
 
-    public Itnes () { 
+    public Catalogo () { 
         this.produtos = new ArrayList<>();
         this.produtos.add(new Produto("Notebook Core i5", 3500.00));
         this.produtos.add(new Produto("Smartphone Última Geração", 2100.00));

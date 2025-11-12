@@ -10,17 +10,27 @@ public class View{
     private Scanner scanner = new Scanner(System.in);
 
     public int ExibeMenu(){
-        System.out.println("=========================");
+        System.out.println("\n\n=========================");
         System.out.println("--- Bem Vindo à Loja ---");
-        System.out.println("=========================");
+        System.out.println("=========================\n");
         System.out.println("1) Ver produtos disponiveis para compra");
         System.out.println("2) Ver carrinho atual");
         System.out.println("3) Finalizar compra");
         System.out.println("4) Sair");
         System.out.println("Escolha uma opção:");
 
-        return scanner.nextInt();
+        try {
+            return Integer.parseInt(scanner.nextLine().trim());
+        } catch (NumberFormatException e) {
+            return -1;
+        }
     }
+    
+    public String lerEntrada(String msg) {
+        System.out.print(msg);
+        return scanner.nextLine().trim();
+    }
+    
     public int exibirMenuProdutos(List<Produto> produtosDisponiveis) {
         System.out.println("\n--- Produtos Disponíveis ---");
         for (int i = 0; i < produtosDisponiveis.size(); i++) {
@@ -61,12 +71,4 @@ public class View{
     public void mostrarMensagem(String msg){
         System.out.println(msg);
     }
-
-
-    public String lerEntrada(String msg) {
-        System.out.print(msg);
-        return scanner.nextLine();
-    }
 }
-
-

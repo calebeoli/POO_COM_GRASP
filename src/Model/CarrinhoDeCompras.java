@@ -6,7 +6,7 @@ import java.util.List;
 public class CarrinhoDeCompras {
     private List<Produto> Itens = new ArrayList<>();
 
-    public void AdicionaCarrionho(Produto produto){
+    public void AdicionaCarrinho(Produto produto){
         Itens.add(produto);
     }
 
