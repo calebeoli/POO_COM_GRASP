@@ -36,12 +36,12 @@ public class LojaController {
                     break;
                 case 0:
                     if (confirmarSaida()) {
-                        view.exibirMensagem("fechando a loja");
+                        view.mostrarMensagem("fechando a loja");
                         return;
                     }
                     break;
                 default:
-                    view.exibirMensagem("Opção inválida");
+                    view.mostrarMensagem("Opção inválida");
             }
         }
     }
@@ -58,9 +58,9 @@ public class LojaController {
         if (escolha > 0 && escolha <= produtosDisponiveis.size()) {
             Produto p = produtosDisponiveis.get(escolha - 1);
             carrinho.AdicionaCarrionho(p); 
-            view.exibirMensagem("'" + p.getNome() + "'adicionado ao carrinho");
+            view.mostrarMensagem("'" + p.getNome() + "'adicionado ao carrinho");
         } else if (escolha != 0) {
-            view.exibirMensagem("produto inválido");
+            view.mostrarMensagem("produto inválido");
         }
     }
 
@@ -69,6 +69,6 @@ public class LojaController {
     }
 
     private void finalizarCompra() {
-        view.eibirNotaFiscal(carrinho.getItens(), carrinho.CalculaTotal());
+        view.exibirNotaFiscal(carrinho.getItens(), carrinho.CalculaTotal());
     }
 }

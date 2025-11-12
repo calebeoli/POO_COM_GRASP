@@ -62,4 +62,11 @@ public class View{
         System.out.println(msg);
     }
 
+
+    public String lerEntrada(String msg) {
+        System.out.print(msg);
+        return scanner.nextLine();
+    }
 }
+
+
