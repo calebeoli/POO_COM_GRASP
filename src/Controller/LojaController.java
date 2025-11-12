@@ -6,6 +6,25 @@ import Model.Catalogo;
 import Model.Produto;
 import View.View;
 
+/**
+ * PROFESSOR, AQUI ESTÁ A JUSTIFICATIVA DOS PADRÕES QUE USAMOS:
+ *
+ * 1. PADRÃO: Controller (Controlador)
+ * - ONDE FOI APLICADO:
+ * Nesta classe, `LojaController`.
+ *
+ * - POR QUE USAMOS:
+ * A gente usou o `LojaController` para ser o "cérebro" que coordena tudo.
+ *
+ * O `Controller` recebe as entradas do usuário (que vêm da `View`) e
+ * "delega" o trabalho para o `Model`. Por exemplo, quando o usuário quer
+ * adicionar um produto, o `Controller` não mexe na lista; ele manda o
+ * `Carrinho` fazer isso (`carrinho.AdicionaCarrinho(p)`).
+ *
+ * Isso segue o padrão porque ele é o responsável por coordenar o fluxo,
+ * mantendo a `View` e o `Model` separados.
+ */
+
 public class LojaController {
     private CarrinhoDeCompras carrinho;
     private View view;

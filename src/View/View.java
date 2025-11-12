@@ -5,6 +5,24 @@ import Model.Produto;
 import java.util.Scanner;
 import java.util.List;
 
+/**
+ *
+ * 1. PADRÃO (GUIA): High Cohesion (Alta Coesão)
+ * - ONDE FOI APLICADO:
+ * Nesta classe, `View`.
+ *
+ * - POR QUE USAMOS:
+ * A gente usou esse princípio para que cada classe tivesse uma
+ * responsabilidade única (como os funcionários do hotel nos slides).
+ *
+ * Esta classe `View` é totalmente focada em uma só coisa: interagir
+ * com o usuário. Ela só sabe "mostrar coisas na tela" e "ler o teclado".
+ *
+ * Ela não tem ideia de como um carrinho funciona ou como um total é
+ * calculado. Isso deixa ela "coesa" e fácil de mexer no futuro
+ * sem quebrar o resto do sistema.
+ */
+
 public class View{
 
     private Scanner scanner = new Scanner(System.in);
