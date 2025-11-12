@@ -46,4 +46,20 @@ public class View{
         }
         System.out.printf("Total : R$%.2f\n", total);
     }
+    public void exibirNotaFiscal(List<Produto> itens, double total) {
+        System.out.println("\n--- NOTA FISCAL ---");
+        System.out.println("\nProdutos Adquiridos:");
+        for (Produto item : itens) {
+            System.out.println("- " + item.toString());
+        }
+        System.out.printf("----------------------------\n");
+        System.out.printf("VALOR TOTAL PAGO: R$%.2f\n", total);
+        System.out.println("\nObrigado, volte sempre!");
+    }
+
+
+    public void mostrarMensagem(String msg){
+        System.out.println(msg);
+    }
+
 }
