@@ -6,7 +6,7 @@ import java.util.List;
 
 public class Catalogo { 
     private List<Produto> produtos;
-
+// essa classe vai apenas mostrar o catálogo da loja, toda vez que for disparado o método exibirProdutos() vai mostrar essa lista de itens
     public Catalogo () { 
         this.produtos = new ArrayList<>();
         this.produtos.add(new Produto("Notebook Core i5", 3500.00));
